@@ -6,7 +6,15 @@ module.exports = {
         "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
     ],
     theme: {
-        extend: {},
+        container: {
+            screens: {
+                sm: "600px",
+                md: "728px",
+                lg: "984px",
+                xl: "1240px",
+                "2xl": "1240px",
+            },
+        },
     },
     plugins: [],
 };

@@ -1,8 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Header from "./Header";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 export default function ReactContainer() {
-    return <h1>Hello React!</h1>;
+    return (
+        <>
+            <BrowserRouter>
+                <Header />
+            </BrowserRouter>
+        </>
+    );
 }
 
 if (document.getElementById("react-container")) {
