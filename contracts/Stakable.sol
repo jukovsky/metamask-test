@@ -115,4 +115,23 @@ contract Stakable {
         summary.total_amount = totalStakeAmount;
         return summary;
     }
+
+    function totalStaked()
+        public
+        view
+        returns (uint256)
+    {
+        uint256 totalStakeAmount;
+		for (uint256 h = 0; h < stakeholders.length; h += 1) {
+			for (uint256 s = 0; s < stakeholders[h].address_stakes.length; s += 1) {
+				totalStakeAmount += stakeholders[h].address_stakes[s].amount;
+			}
+		}
+
+        return totalStakeAmount;
+    }
+
+	function totalStakeholders() public view returns (uint256) {
+		return stakeholders.length;
+	}
 }
